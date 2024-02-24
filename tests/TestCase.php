@@ -2,9 +2,9 @@
 
 namespace Fp\ScrambleSpatieRequests\Tests;
 
+use Fp\ScrambleSpatieRequests\ScrambleSpatieRequestsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Fp\ScrambleSpatieRequests\ScrambleSpatieRequestsServiceProvider;
 
 class TestCase extends Orchestra
 {
