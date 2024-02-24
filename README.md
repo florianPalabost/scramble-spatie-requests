@@ -20,7 +20,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require fp/scramble-spatie-requests
+composer require florian-palabost/scramble-spatie-requests
 ```
 
 You can publish and run the migrations with:
