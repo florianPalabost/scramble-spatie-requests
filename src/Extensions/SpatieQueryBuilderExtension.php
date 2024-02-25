@@ -45,7 +45,13 @@ class SpatieQueryBuilderExtension extends OperationExtension
 
     public function handle(Operation $operation, RouteInfo $routeInfo): void
     {
-        foreach ($this->features() as $feature) {
+        $features = $this->features();
+
+        if ($features === []) {
+            return;
+        }
+
+        foreach ($features as $feature) {
             /** @var \PhpParser\Node\Expr\MethodCall $methodCall */
             $methodCall = (new \PhpParser\NodeFinder)->findFirst(
                 $routeInfo->methodNode(),
