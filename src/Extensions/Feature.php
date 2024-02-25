@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fp\Extensions;
+namespace Fp\ScrambleSpatieRequests\Extensions;
 
 use Dedoc\Scramble\Support\Generator\Types\StringType;
 use Dedoc\Scramble\Support\Generator\Types\Type;

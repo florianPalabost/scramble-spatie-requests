@@ -1,9 +1,9 @@
 <?php
 
-namespace Fp\Extensions\Features;
+namespace Fp\ScrambleSpatieRequests\Extensions\Features;
 
 use Dedoc\Scramble\Support\Generator\Types\ObjectType;
-use Fp\Extensions\Feature;
+use Fp\ScrambleSpatieRequests\Extensions\Feature;
 
 class QueryBuilderFeature extends Feature
 {
