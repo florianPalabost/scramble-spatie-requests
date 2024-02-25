@@ -1,9 +1,9 @@
 # This is my package scramble-spatie-requests
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/fp/scramble-spatie-requests.svg?style=flat-square)](https://packagist.org/packages/fp/scramble-spatie-requests)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/florian-palabost/scramble-spatie-requests.svg?style=flat-square)](https://packagist.org/packages/fp/scramble-spatie-requests)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/fp/scramble-spatie-requests/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/florianPalabost/scramble-spatie-requests/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/fp/scramble-spatie-requests/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/florianPalabost/scramble-spatie-requests/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/fp/scramble-spatie-requests.svg?style=flat-square)](https://packagist.org/packages/fp/scramble-spatie-requests)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/florian-palabost/scramble-spatie-requests/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/florianPalabost/scramble-spatie-requests/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/florian-palabost/scramble-spatie-requests.svg?style=flat-square)](https://packagist.org/packages/florian-palabost/scramble-spatie-requests)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -23,37 +23,12 @@ You can install the package via composer:
 composer require florian-palabost/scramble-spatie-requests
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="scramble-spatie-requests-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="scramble-spatie-requests-config"
-```
-
-This is the contents of the published config file:
+You neeed to update the scramble.extensions property in the scramble configuration file to add this extension.
 
 ```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="scramble-spatie-requests-views"
-```
-
-## Usage
-
-```php
-$scrambleSpatieRequests = new Fp\ScrambleSpatieRequests();
-echo $scrambleSpatieRequests->echoPhrase('Hello, Fp!');
+    'extensions' => [
+        Fp\ScrambleSpatieRequests\SpatieQueryBuilderExtension::class
+    ],
 ```
 
 ## Testing
