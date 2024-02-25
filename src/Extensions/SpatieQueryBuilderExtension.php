@@ -54,7 +54,7 @@ class SpatieQueryBuilderExtension extends OperationExtension
             );
 
             if (! $methodCall) {
-                return;
+                continue;
             }
 
             $feature->setValues($this->getValues($methodCall));
@@ -94,14 +94,18 @@ class SpatieQueryBuilderExtension extends OperationExtension
         // ->allowedIncludes(['posts', 'posts.author'])
         if ($methodCall->args[0]->value instanceof \PhpParser\Node\Expr\Array_) {
             return array_map(function (\PhpParser\Node\Expr\ArrayItem $item) {
-                return $item->value->value;
+                if ($item->value instanceof \PhpParser\Node\Scalar\String_) {
+                    return $item->value->value;
+                }
             }, $methodCall->args[0]->value->items);
         }
 
         // ->allowedIncludes('posts', 'posts.author')
         if ($methodCall->args[0]->value instanceof \PhpParser\Node\Scalar\String_) {
             return array_map(function (\PhpParser\Node\Arg $arg) {
-                return $arg->value->value;
+                if ($arg->value instanceof \PhpParser\Node\Scalar\String_) {
+                    return $arg->value->value;
+                }
             }, $methodCall->args);
         }
 
