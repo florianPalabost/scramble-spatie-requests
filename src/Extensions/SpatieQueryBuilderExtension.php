@@ -10,8 +10,8 @@ use Dedoc\Scramble\Support\Generator\Operation;
 use Dedoc\Scramble\Support\Generator\Parameter;
 use Dedoc\Scramble\Support\Generator\Schema;
 use Dedoc\Scramble\Support\RouteInfo;
-use Fp\Extensions\Features\JsonApiPaginateFeature;
-use Fp\Extensions\Features\QueryBuilderFeature;
+use Fp\ScrambleSpatieRequests\Extensions\Features\JsonApiPaginateFeature;
+use Fp\ScrambleSpatieRequests\Extensions\Features\QueryBuilderFeature;
 
 class SpatieQueryBuilderExtension extends OperationExtension
 {
