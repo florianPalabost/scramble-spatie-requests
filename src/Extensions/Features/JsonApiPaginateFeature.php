@@ -15,7 +15,7 @@ class JsonApiPaginateFeature extends Feature
         $pageSchema->addProperty('size', (new IntegerType)->setDescription('The number of items to return per page'));
 
         return [
-            new static(
+            new self(
                 methodName: config('json-api-paginate.method_name', 'jsonPaginate'),
                 queryParameterKey: config('json-api-paginate.pagination_parameter', 'page'),
                 example: ['page[number]=1'],
