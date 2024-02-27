@@ -52,7 +52,7 @@ class SpatieQueryBuilderExtension extends OperationExtension
         }
 
         foreach ($features as $feature) {
-            /** @var \PhpParser\Node\Expr\MethodCall $methodCall */
+            /** @var \PhpParser\Node\Expr\MethodCall|null $methodCall */
             $methodCall = (new \PhpParser\NodeFinder)->findFirst(
                 $routeInfo->methodNode(),
                 fn (\PhpParser\Node $node) => // todo: check if the methodName is called on QueryBuilder
